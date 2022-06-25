@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
-import com.tubesuas.myring.FoodMarket
+import com.tubesuas.myring.MyRing
 import com.tubesuas.myring.R
 import com.tubesuas.myring.model.request.RegisterRequest
 import com.tubesuas.myring.model.response.login.LoginResponse
@@ -87,18 +87,18 @@ class SignupAddressFragment : Fragment(), SignupContract.View {
     }
 
     override fun onRegisterSuccess(loginResponse: LoginResponse, view: View) {
-        FoodMarket.getApp().setToken(loginResponse.access_token)
+        MyRing.getApp().setToken(loginResponse.access_token)
 
         val gson = Gson()
         val json = gson.toJson(loginResponse.user)
-        FoodMarket.getApp().setUser(json)
+        MyRing.getApp().setUser(json)
 
         if (data.filePath == null) {
             Navigation.findNavController(view)
                 .navigate(R.id.action_signup_success, null)
             (activity as AuthActivity).toolbarSignUpSuccess()
         } else {
-            Log.v("tamvan", FoodMarket.getApp().getToken())
+            Log.v("tamvan", MyRing.getApp().getToken())
             presenter.submitPhotoRegister(data.filePath!!, view)
         }
     }

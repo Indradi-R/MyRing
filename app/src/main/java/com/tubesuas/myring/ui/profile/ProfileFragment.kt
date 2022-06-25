@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.tubesuas.myring.FoodMarket
+import com.tubesuas.myring.MyRing
 import com.tubesuas.myring.R
 import com.tubesuas.myring.model.response.login.User
 import com.bumptech.glide.Glide
@@ -36,7 +36,7 @@ class ProfileFragment : Fragment() {
         viewPager.adapter = sectionPagerAdapter
         tabLayout.setupWithViewPager(viewPager)
 
-        var user = FoodMarket.getApp().getUser()
+        var user = MyRing.getApp().getUser()
         var userResponse = Gson().fromJson(user, User::class.java)
 
         tvName.setText(userResponse.name)

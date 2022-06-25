@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.gson.Gson
-import com.tubesuas.myring.FoodMarket
+import com.tubesuas.myring.MyRing
 import com.tubesuas.myring.R
 import com.tubesuas.myring.model.response.home.Data
 import com.tubesuas.myring.model.response.home.HomeResponse
@@ -62,7 +62,7 @@ class HomeFragment : Fragment(),HomeAdapter.ItemAdapterCallback, HomeContract.Vi
             it.window?.setBackgroundDrawableResource(android.R.color.transparent)
         }
 
-        var user = FoodMarket.getApp().getUser()
+        var user = MyRing.getApp().getUser()
         var userResponse = Gson().fromJson(user, User::class.java)
 
         if (!userResponse.profile_photo_url.isNullOrEmpty()) {

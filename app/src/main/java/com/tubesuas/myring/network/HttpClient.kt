@@ -1,7 +1,7 @@
 package com.tubesuas.myring.network
 
 import com.tubesuas.myring.BuildConfig
-import com.tubesuas.myring.FoodMarket
+import com.tubesuas.myring.MyRing
 import com.tubesuas.myring.utils.Helpers
 import com.readystatesoftware.chuck.ChuckInterceptor
 import okhttp3.Interceptor
@@ -37,7 +37,7 @@ class HttpClient {
     }
 
     private fun buildRetrofitClient() {
-        val token = FoodMarket.getApp().getToken()
+        val token = MyRing.getApp().getToken()
         buildRetrofitClient(token)
     }
 
@@ -50,7 +50,7 @@ class HttpClient {
             var interceptor = HttpLoggingInterceptor()
             interceptor.level = HttpLoggingInterceptor.Level.BODY
             builder.addInterceptor(interceptor)
-            builder.addInterceptor(ChuckInterceptor(FoodMarket.getApp()))
+            builder.addInterceptor(ChuckInterceptor(MyRing.getApp()))
         }
 
         if (token != null) {

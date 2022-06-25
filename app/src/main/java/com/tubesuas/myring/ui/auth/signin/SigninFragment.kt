@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.tubesuas.myring.FoodMarket
+import com.tubesuas.myring.MyRing
 import com.tubesuas.myring.R
 import com.tubesuas.myring.model.response.login.LoginResponse
 import com.tubesuas.myring.ui.MainActivity
@@ -33,7 +33,7 @@ class SigninFragment : Fragment(), SigninContract.View {
         super.onActivityCreated(savedInstanceState)
         presenter = SigninPresenter(this)
 
-        if (!FoodMarket.getApp().getToken().isNullOrEmpty()) {
+        if (!MyRing.getApp().getToken().isNullOrEmpty()) {
             val home = Intent(activity, MainActivity::class.java)
             startActivity(home)
             activity?.finish()
@@ -68,11 +68,11 @@ class SigninFragment : Fragment(), SigninContract.View {
 
     override fun onLoginSuccess(loginResponse: LoginResponse) {
 
-        FoodMarket.getApp().setToken(loginResponse.access_token)
+        MyRing.getApp().setToken(loginResponse.access_token)
 
         val gson = Gson()
         val json = gson.toJson(loginResponse.user)
-        FoodMarket.getApp().setUser(json)
+        MyRing.getApp().setUser(json)
 
         val home = Intent(activity, MainActivity::class.java)
         startActivity(home)

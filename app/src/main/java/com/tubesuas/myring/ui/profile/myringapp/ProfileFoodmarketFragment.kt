@@ -1,4 +1,4 @@
-package com.tubesuas.myring.ui.profile.foodmarket
+package com.tubesuas.myring.ui.profile.myringapp
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

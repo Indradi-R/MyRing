@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
-import com.tubesuas.myring.FoodMarket
+import com.tubesuas.myring.MyRing
 import com.tubesuas.myring.R
 import com.tubesuas.myring.model.response.checkout.CheckoutResponse
 import com.tubesuas.myring.model.response.home.Data
@@ -80,7 +80,7 @@ class PaymentFragment : Fragment() , PaymentContract.View{
             total = 0
         }
 
-        var user = FoodMarket.getApp().getUser()
+        var user = MyRing.getApp().getUser()
         var userResponse = Gson().fromJson(user, User::class.java)
 
         tvName.text = userResponse?.name

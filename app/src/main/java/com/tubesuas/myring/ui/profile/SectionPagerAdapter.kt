@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.tubesuas.myring.ui.profile.account.ProfileAccountFragment
-import com.tubesuas.myring.ui.profile.foodmarket.ProfileFoodmarketFragment
+import com.tubesuas.myring.ui.profile.myringapp.ProfileFoodmarketFragment
 
 class SectionPagerAdapter(fm:FragmentManager) : FragmentPagerAdapter(fm) {
 

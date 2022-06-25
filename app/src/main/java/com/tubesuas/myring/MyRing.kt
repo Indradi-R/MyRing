@@ -5,12 +5,12 @@ import androidx.preference.PreferenceManager
 import androidx.multidex.MultiDexApplication
 import com.tubesuas.myring.network.HttpClient
 
-class FoodMarket : MultiDexApplication() {
+class MyRing : MultiDexApplication() {
 
     companion object {
-        lateinit var instance : FoodMarket
+        lateinit var instance : MyRing
 
-        fun getApp() : FoodMarket {
+        fun getApp() : MyRing {
             return instance
         }
     }
