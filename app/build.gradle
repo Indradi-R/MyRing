@@ -36,8 +36,6 @@ android {
     productFlavors {
         dev {
             applicationId = "com.tubesuas.myring.dev"
-//            buildConfigField "String", "BASE_URL", "\"http://foodmarket-backend.buildwithangga.id/\""
-//            buildConfigField "String", "BASE_URL", "\"http://foodmarket-backend.test/\""
             buildConfigField "String", "BASE_URL", "\"http://192.168.1.3:8000/\""
         }
     }
